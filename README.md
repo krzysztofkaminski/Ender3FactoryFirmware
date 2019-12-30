@@ -1,20 +1,26 @@
 # Ender3FactoryFirmware
-Factory Flash, EEPROM and Fuses copied from my Ender 3 MCU.
+Factory `Flash, EEPROM and Fuses` copied from my `Ender 3` MCU.
 
 
 Burn Flash:
+```
 avrdude -p m1284p -c usbasp -P /dev/ttyUSB0 -b 115200 -U flash:w:flash.intelhex:i
+```
 
 
 Burn EEPROM:
+```
 avrdude -p m1284p -c usbasp -P /dev/ttyUSB0 -b 115200 -U eeprom:w:eeprom.intelhex:i
-
+```
 
 M115 - Firmware Info:
+```
 FIRMWARE_NAME:Marlin V1; Sprinter/grbl mashup for gen6 FIRMWARE_URL:http://www.mendel-parts.com PROTOCOL_VERSION:1.0 MACHINE_TYPE:www.creality3d.cn EXTRUDER_COUNT:1 UUID:00000000-0000-0000-0000-000000000000
+```
 
 
 M501 - Settings from EEPROM:
+```
 Steps per unit:
 M92 X80.00 Y80.00 Z400.00 E93.00
 Maximum feedrates (mm/s):
@@ -29,10 +35,12 @@ Home offset (mm):
 M206 X0.00 Y0.00 Z0.00
 PID settings:
 M301 P21.73 I1.54 D76.55
+```
 
 
 Device signature = 0x1e9705 (m1284p)
+```
 lfuse reads as D6
 hfuse reads as DC
 efuse reads as FD
-
+```
